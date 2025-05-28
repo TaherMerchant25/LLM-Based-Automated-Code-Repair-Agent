@@ -620,7 +620,7 @@ Return only the corrected Python code with the single bug fixed."""
 
 def main():
     """Main function to run the QuixBugs code correction."""
-    API_KEY = "AIzaSyAJ6oxQy3HdJHdiohj2NktSDCiLZxYaQRs"
+    API_KEY = ""
     
     if API_KEY == "YOUR_GEMINI_API_KEY_HERE":
         print("Please set your Gemini API key in the script")

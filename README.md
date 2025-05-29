@@ -182,7 +182,7 @@ python main_pipeline.py
 python test_fixed_only.py          # all programs
 python test_fixed_only.py gcd      # specific program
 ```
----
+
 ---
 
 ## 🧪 Run It Yourself (Approach - 2)
@@ -201,13 +201,7 @@ export GEMINI_API_KEY_2=your_repair_key
 export GEMINI_API_KEY_3=your_validation_key
 ```
 
-### 3. Run the Pipeline
-
-```bash
-python main_pipeline.py
-```
-
-### 4. Run Fast Corrector (Optional)
+### 4. Run Fast Corrector 
 
 ```bash
 python code_corrector.py
@@ -219,6 +213,7 @@ python code_corrector.py
 python test_fixed_only.py          # all programs
 python test_fixed_only.py gcd      # specific program
 ```
+
 ---
 
 ### 📁 Folder Structure
@@ -235,6 +230,8 @@ python test_fixed_only.py gcd      # specific program
 ├── main_pipeline.py             # Orchestration script
 └── quixbugs_report_<timestamp>.txt  # Evaluation report
 ```
+---
+
 ### 📬 Contact
 ```
 Created by Taher Merchant.

@@ -306,7 +306,7 @@ class CodeRepairWorker:
 
 def main():
     # REPLACE WITH YOUR API KEY
-    API_KEY_2 = "AIzaSyAJ6oxQy3HdJHdiohj2NktSDCiLZxYaQRs"  # Replace with your second API key
+    API_KEY_2 = ""  # Replace with your second API key
     
     if API_KEY_2 == "YOUR_GEMINI_API_KEY_2":
         print("Please set your Gemini API key in the script")

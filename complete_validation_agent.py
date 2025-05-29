@@ -546,11 +546,7 @@ class CodeValidationWorker:
 
 def main():
     # Gemini API keys (using the first one by default)
-    GEMINI_API_KEYS = [
-        "AIzaSyBE--FDVdwSZJNZlVQ6CG1y2HoNYJ8Se4k",
-        "AIzaSyAJ6oxQy3HdJHdiohj2NktSDCiLZxYaQRs",
-        "AIzaSyDKuD8bm8WPvjfYd2UsXP7rG13ozqWl0MI"
-    ]
+    GEMINI_API_KEYS = ["","",""]
     
     # Use the first API key, you can rotate or add logic to switch between them
     API_KEY = GEMINI_API_KEYS[0]

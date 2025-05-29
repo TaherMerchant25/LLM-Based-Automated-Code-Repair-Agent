@@ -1,0 +1,47 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: hanoi
+Timestamp: 2025-05-29 22:58:04
+==================================================
+
+VALIDATION STATUS: FAILED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: FAILED
+ISSUES: The fixed code still contains a redundant `return steps` statement.  While the `KeyError` is avoided, the extra `return` statement will always return an empty list even when `height` is greater than 0 and steps have been added.
+
+CORRECTED_CODE:
+```python
+def hanoi(height, start=1, end=3):
+    steps = []
+    if height > 0:
+        helper = ({1, 2, 3} - {start} - {end}).pop()
+        steps.extend(hanoi(height - 1, start, helper))
+        steps.append((start, helper))
+        steps.extend(hanoi(height - 1, helper, end))
+    return steps
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.8386
+Line Similarity: 0.8750
+Token Similarity: 0.9886
+Structure Similarity: 0.9915
+Overall Similarity: 0.9251
+
+FINAL CODE:
+------------------------------
+def hanoi(height, start=1, end=3):
+    steps = []
+    if height > 0:
+        helper = ({1, 2, 3} - {start} - {end}).pop()
+        steps.extend(hanoi(height - 1, start, helper))
+        steps.append((start, helper))
+        steps.extend(hanoi(height - 1, helper, end))
+    return steps
+
+==================================================

@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "analysis": "1. ALGORITHM PURPOSE: The algorithm aims to wrap a given text string into multiple lines, ensuring that no line exceeds a specified column width (`cols`) and that words are not split across lines unless absolutely necessary.  It preserves the original spacing.\n\n2. BUG LOCATION: Line 7: `while len(text) > cols:`\n\n3. BUG TYPE: Wrong loop termination condition.\n\n4. PROBLEM DESCRIPTION: The loop condition `len(text) > cols` is incorrect.  It stops the wrapping process prematurely.  Consider the case where the last line is exactly `cols` characters long. The loop will terminate before adding this last line to `lines`.  The algorithm should continue as long as there's any remaining text to process, even if a line is exactly `cols` characters long.\n\n5. EXPECTED BEHAVIOR: The loop condition should be changed to `len(text) > 0` or `text` to ensure that all remaining text is processed and added to the `lines` list.  This will correctly handle cases where the last line's length is equal to `cols`.\n\n6. CONFIDENCE: High",
+  "agent": "Bug Analysis Agent",
+  "algorithm": "wrap"
+}

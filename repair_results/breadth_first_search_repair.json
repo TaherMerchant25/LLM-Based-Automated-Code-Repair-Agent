@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "from collections import deque as Queue\n \ndef breadth_first_search(startnode, goalnode):\n    queue = Queue()\n    queue.append(startnode)\n\n    nodesseen = set()\n    nodesseen.add(startnode)\n\n    while queue:\n        node = queue.popleft()\n\n        if node is goalnode:\n            return True\n        else:\n            queue.extend(successor for successor in node.successors if successor not in nodesseen)\n            nodesseen.update(node.successors)\n\n    return False\n\n\n\n\"\"\"\nBreadth-First Search\n\n\nInput:\n    startnode: A digraph node\n    goalnode: A digraph node\n\nOutput:\n    Whether goalnode is reachable from startnode\n\"\"\"",
+  "original_response": "```python\n\nfrom collections import deque as Queue\n \ndef breadth_first_search(startnode, goalnode):\n    queue = Queue()\n    queue.append(startnode)\n\n    nodesseen = set()\n    nodesseen.add(startnode)\n\n    while queue:\n        node = queue.popleft()\n\n        if node is goalnode:\n            return True\n        else:\n            queue.extend(successor for successor in node.successors if successor not in nodesseen)\n            nodesseen.update(node.successors)\n\n    return False\n\n\n\n\"\"\"\nBreadth-First Search\n\n\nInput:\n    startnode: A digraph node\n    goalnode: A digraph node\n\nOutput:\n    Whether goalnode is reachable from startnode\n\"\"\"\n\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "breadth_first_search"
+}

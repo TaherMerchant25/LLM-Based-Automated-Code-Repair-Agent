@@ -1,0 +1,94 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: kth
+Timestamp: 2025-05-29 22:58:15
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+def kth(arr, k):
+    pivot = arr[0]
+    below = [x for x in arr if x < pivot]
+    above = [x for x in arr if x > pivot]
+
+    num_less = len(below)
+    num_lessoreq = len(arr) - len(above)
+
+    if k < num_less:
+        return kth(below, k)
+    elif k > num_lessoreq:
+        return kth(above, k - num_lessoreq)
+    else:
+        return pivot
+
+
+ 
+"""
+QuickSelect
+
+This is an efficient equivalent to sorted(arr)[k].
+
+Input:
+    arr: A list of ints
+    k: An int
+
+Precondition:
+    0 <= k < len(arr)
+
+Output:
+    The kth-lowest element of arr (0-based)
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.7490
+Line Similarity: 0.6286
+Token Similarity: 0.7468
+Structure Similarity: 0.9827
+Overall Similarity: 0.7589
+
+FINAL CODE:
+------------------------------
+def kth(arr, k):
+    pivot = arr[0]
+    below = [x for x in arr if x < pivot]
+    above = [x for x in arr if x > pivot]
+
+    num_less = len(below)
+    num_lessoreq = len(arr) - len(above)
+
+    if k < num_less:
+        return kth(below, k)
+    elif k > num_lessoreq:
+        return kth(above, k - num_lessoreq)
+    else:
+        return pivot
+
+
+ 
+"""
+QuickSelect
+
+This is an efficient equivalent to sorted(arr)[k].
+
+Input:
+    arr: A list of ints
+    k: An int
+
+Precondition:
+    0 <= k < len(arr)
+
+Output:
+    The kth-lowest element of arr (0-based)
+"""
+
+==================================================

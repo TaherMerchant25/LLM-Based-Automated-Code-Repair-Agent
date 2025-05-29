@@ -86,7 +86,7 @@ Return only the corrected Python code with the single bug fixed."""
 
     def fix_code_with_gemini(self, buggy_code: str, algorithm_name: str, enable_multi_attempt: bool = True) -> dict:
         """Use Gemini to fix the buggy code with optional multi-attempt strategy for higher accuracy."""
-        max_retries = 2
+        max_retries = 3
         base_delay = 10
         best_result = None
         
@@ -628,8 +628,8 @@ def main():
         return
     
     # ACCURACY VS SPEED CONFIGURATION
-    ACCURACY_MODE = 'standard'    # Options: 'fast', 'standard', 'high', 'maximum'
-    MODEL_NAME = 'gemini-1.5-flash'  # Options: 'gemini-1.5-flash' (fast), 'gemini-1.5-pro' (accurate)
+    ACCURACY_MODE = 'high'    # Options: 'fast', 'standard', 'high', 'maximum'
+    MODEL_NAME = 'gemini-1.5-flash'  # Options: 'gemini-2.5-flash' (fast), 'gemini-2.5-pro' (accurate)
     FAST_MODE = True              # Skip detailed testing
     CONCURRENT = False            # Concurrent processing
     MAX_WORKERS = 3

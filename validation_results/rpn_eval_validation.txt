@@ -1,0 +1,114 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: rpn_eval
+Timestamp: 2025-05-29 22:59:09
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+def rpn_eval(tokens):
+    def op(symbol, a, b):
+        return {
+            '+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b,
+            '/': lambda a, b: a / b
+        }[symbol](a, b)
+
+    stack = []
+ 
+    for token in tokens:
+        if isinstance(token, float):
+            stack.append(token)
+        else:
+            b = stack.pop()
+            a = stack.pop()
+            stack.append(
+                op(token, a, b)
+            )
+
+    return stack.pop()
+
+
+
+"""
+Reverse Polish Notation
+
+Four-function calculator with input given in Reverse Polish Notation (RPN).
+
+Input:
+    A list of values and operators encoded as floats and strings
+
+Precondition:
+    all(
+        isinstance(token, float) or token in ('+', '-', '*', '/') for token in tokens
+    )
+
+Example:
+    >>> rpn_eval([3.0, 5.0, '+', 2.0, '/'])
+    4.0
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.5130
+Line Similarity: 0.5278
+Token Similarity: 0.4778
+Structure Similarity: 0.9758
+Overall Similarity: 0.5994
+
+FINAL CODE:
+------------------------------
+def rpn_eval(tokens):
+    def op(symbol, a, b):
+        return {
+            '+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b,
+            '/': lambda a, b: a / b
+        }[symbol](a, b)
+
+    stack = []
+ 
+    for token in tokens:
+        if isinstance(token, float):
+            stack.append(token)
+        else:
+            b = stack.pop()
+            a = stack.pop()
+            stack.append(
+                op(token, a, b)
+            )
+
+    return stack.pop()
+
+
+
+"""
+Reverse Polish Notation
+
+Four-function calculator with input given in Reverse Polish Notation (RPN).
+
+Input:
+    A list of values and operators encoded as floats and strings
+
+Precondition:
+    all(
+        isinstance(token, float) or token in ('+', '-', '*', '/') for token in tokens
+    )
+
+Example:
+    >>> rpn_eval([3.0, 5.0, '+', 2.0, '/'])
+    4.0
+"""
+
+==================================================

@@ -1,0 +1,105 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: get_factors
+Timestamp: 2025-05-29 22:58:02
+==================================================
+
+VALIDATION STATUS: FAILED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: FAILED
+ISSUES: The fixed code is an improvement, correctly handling cases where the number is prime. However, it still doesn't correctly factor numbers with prime factors larger than their square root.  The recursive call only handles the first factor found.  The logic of returning `[n]` when the loop completes only works if `n` is prime.  It fails for composite numbers whose smallest prime factor is greater than the square root. For example, `get_factors(105)` returns `[105]` instead of `[3, 5, 7]`.
+
+CORRECTED_CODE:
+```python
+def get_factors(n):
+    factors = []
+    i = 2
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+        i += 1
+    if n > 1:
+        factors.append(n)
+    return factors
+
+"""
+Prime Factorization
+
+Factors an int using naive trial division.
+
+Input:
+    n: An int to factor
+
+Output:
+    A list of the prime factors of n in sorted order with repetition
+
+Precondition:
+    n >= 1
+
+Examples:
+    >>> get_factors(1)
+    []
+    >>> get_factors(100)
+    [2, 2, 5, 5]
+    >>> get_factors(101)
+    [101]
+    >>> get_factors(105)
+    [3, 5, 7]
+
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.0734
+Line Similarity: 0.1304
+Token Similarity: 0.2388
+Structure Similarity: 0.3729
+Overall Similarity: 0.2000
+
+FINAL CODE:
+------------------------------
+def get_factors(n):
+    factors = []
+    i = 2
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+        i += 1
+    if n > 1:
+        factors.append(n)
+    return factors
+
+"""
+Prime Factorization
+
+Factors an int using naive trial division.
+
+Input:
+    n: An int to factor
+
+Output:
+    A list of the prime factors of n in sorted order with repetition
+
+Precondition:
+    n >= 1
+
+Examples:
+    >>> get_factors(1)
+    []
+    >>> get_factors(100)
+    [2, 2, 5, 5]
+    >>> get_factors(101)
+    [101]
+    >>> get_factors(105)
+    [3, 5, 7]
+
+"""
+
+==================================================

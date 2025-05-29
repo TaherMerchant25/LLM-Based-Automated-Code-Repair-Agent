@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "def minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node] = group_by_node[u]\n\n    return mst_edges",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node] = group_by_node[u]\n\n    return mst_edges\n```",
+  "algorithm": "minimum_spanning_tree",
+  "similarity_metrics": {
+    "character_similarity": 1.0,
+    "line_similarity": 1.0,
+    "token_similarity": 1.0,
+    "structure_similarity": 1.0,
+    "overall_similarity": 1.0
+  }
+}

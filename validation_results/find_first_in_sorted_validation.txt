@@ -1,0 +1,100 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: find_first_in_sorted
+Timestamp: 2025-05-29 22:57:54
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+def find_first_in_sorted(arr, x):
+    lo = 0
+    hi = len(arr)
+
+    while lo < hi:
+        mid = (lo + hi) // 2
+
+        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+            return mid
+
+        elif x <= arr[mid]:
+            hi = mid
+
+        else:
+            lo = mid + 1
+
+    return -1
+
+ 
+"""
+Fancy Binary Search
+fancy-binsearch
+
+
+Input:
+    arr: A sorted list of ints
+    x: A value to find
+
+Output:
+    The lowest index i such that arr[i] == x, or -1 if x not in arr
+
+Example:
+    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)
+    2
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.4170
+Line Similarity: 0.4516
+Token Similarity: 0.4269
+Structure Similarity: 1.0000
+Overall Similarity: 0.5470
+
+FINAL CODE:
+------------------------------
+def find_first_in_sorted(arr, x):
+    lo = 0
+    hi = len(arr)
+
+    while lo < hi:
+        mid = (lo + hi) // 2
+
+        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+            return mid
+
+        elif x <= arr[mid]:
+            hi = mid
+
+        else:
+            lo = mid + 1
+
+    return -1
+
+ 
+"""
+Fancy Binary Search
+fancy-binsearch
+
+
+Input:
+    arr: A sorted list of ints
+    x: A value to find
+
+Output:
+    The lowest index i such that arr[i] == x, or -1 if x not in arr
+
+Example:
+    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)
+    2
+"""
+
+==================================================

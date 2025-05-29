@@ -1,0 +1,54 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: detect_cycle
+Timestamp: 2025-05-29 22:57:52
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+def detect_cycle(node):
+    hare = tortoise = node
+ 
+    while True:
+        if hare is None or hare.successor is None:
+            return False
+
+        tortoise = tortoise.successor
+        hare = hare.successor.successor
+
+        if hare is tortoise:
+            return True
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.6372
+Line Similarity: 0.6207
+Token Similarity: 0.6216
+Structure Similarity: 0.9796
+Overall Similarity: 0.6961
+
+FINAL CODE:
+------------------------------
+def detect_cycle(node):
+    hare = tortoise = node
+ 
+    while True:
+        if hare is None or hare.successor is None:
+            return False
+
+        tortoise = tortoise.successor
+        hare = hare.successor.successor
+
+        if hare is tortoise:
+            return True
+
+==================================================

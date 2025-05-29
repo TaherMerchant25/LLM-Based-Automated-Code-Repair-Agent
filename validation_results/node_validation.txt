@@ -1,0 +1,52 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: node
+Timestamp: 2025-05-29 22:58:52
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+class Node:
+    def __init__(self, value=None, successors=[], predecessors=[]):
+        self.value = value
+        self.successors = successors
+        self.predecessors = predecessors
+
+    def get_successors(self):
+        return self.successors
+
+    def get_predecessors(self):
+        return self.predecessors
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.6374
+Line Similarity: 0.5217
+Token Similarity: 0.7226
+Structure Similarity: 0.7059
+Overall Similarity: 0.6420
+
+FINAL CODE:
+------------------------------
+class Node:
+    def __init__(self, value=None, successors=[], predecessors=[]):
+        self.value = value
+        self.successors = successors
+        self.predecessors = predecessors
+
+    def get_successors(self):
+        return self.successors
+
+    def get_predecessors(self):
+        return self.predecessors
+
+==================================================

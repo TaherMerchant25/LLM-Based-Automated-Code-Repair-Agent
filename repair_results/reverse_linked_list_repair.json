@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def reverse_linked_list(node):\n    prevnode = None\n    while node:\n        nextnode = node.successor\n        node = nextnode\n        node.successor = prevnode\n        prevnode = node\n    return prevnode",
+  "original_response": "```python\ndef reverse_linked_list(node):\n    prevnode = None\n    while node:\n        nextnode = node.successor\n        node = nextnode\n        node.successor = prevnode\n        prevnode = node\n    return prevnode\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "reverse_linked_list"
+}

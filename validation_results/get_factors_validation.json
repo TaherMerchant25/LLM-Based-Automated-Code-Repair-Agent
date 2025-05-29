@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": false,
+  "syntax_valid": true,
+  "final_code": "def get_factors(n):\n    factors = []\n    i = 2\n    while i * i <= n:\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n        i += 1\n    if n > 1:\n        factors.append(n)\n    return factors\n\n\"\"\"\nPrime Factorization\n\nFactors an int using naive trial division.\n\nInput:\n    n: An int to factor\n\nOutput:\n    A list of the prime factors of n in sorted order with repetition\n\nPrecondition:\n    n >= 1\n\nExamples:\n    >>> get_factors(1)\n    []\n    >>> get_factors(100)\n    [2, 2, 5, 5]\n    >>> get_factors(101)\n    [101]\n    >>> get_factors(105)\n    [3, 5, 7]\n\n\"\"\"",
+  "validation_response": "VALIDATION: FAILED\nISSUES: The fixed code is an improvement, correctly handling cases where the number is prime. However, it still doesn't correctly factor numbers with prime factors larger than their square root.  The recursive call only handles the first factor found.  The logic of returning `[n]` when the loop completes only works if `n` is prime.  It fails for composite numbers whose smallest prime factor is greater than the square root. For example, `get_factors(105)` returns `[105]` instead of `[3, 5, 7]`.\n\nCORRECTED_CODE:\n```python\ndef get_factors(n):\n    factors = []\n    i = 2\n    while i * i <= n:\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n        i += 1\n    if n > 1:\n        factors.append(n)\n    return factors\n\n\"\"\"\nPrime Factorization\n\nFactors an int using naive trial division.\n\nInput:\n    n: An int to factor\n\nOutput:\n    A list of the prime factors of n in sorted order with repetition\n\nPrecondition:\n    n >= 1\n\nExamples:\n    >>> get_factors(1)\n    []\n    >>> get_factors(100)\n    [2, 2, 5, 5]\n    >>> get_factors(101)\n    [101]\n    >>> get_factors(105)\n    [3, 5, 7]\n\n\"\"\"\n```",
+  "algorithm": "get_factors",
+  "similarity_metrics": {
+    "character_similarity": 0.07336956521739131,
+    "line_similarity": 0.13043478260869565,
+    "token_similarity": 0.23880597014925373,
+    "structure_similarity": 0.3728813559322034,
+    "overall_similarity": 0.20002241005730376
+  }
+}

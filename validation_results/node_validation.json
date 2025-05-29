@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "class Node:\n    def __init__(self, value=None, successors=[], predecessors=[]):\n        self.value = value\n        self.successors = successors\n        self.predecessors = predecessors\n\n    def get_successors(self):\n        return self.successors\n\n    def get_predecessors(self):\n        return self.predecessors",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\nclass Node:\n    def __init__(self, value=None, successors=[], predecessors=[]):\n        self.value = value\n        self.successors = successors\n        self.predecessors = predecessors\n\n    def get_successors(self):\n        return self.successors\n\n    def get_predecessors(self):\n        return self.predecessors\n```",
+  "algorithm": "node",
+  "similarity_metrics": {
+    "character_similarity": 0.6373937677053825,
+    "line_similarity": 0.5217391304347826,
+    "token_similarity": 0.7225806451612903,
+    "structure_similarity": 0.7058823529411765,
+    "overall_similarity": 0.6419511568081336
+  }
+}

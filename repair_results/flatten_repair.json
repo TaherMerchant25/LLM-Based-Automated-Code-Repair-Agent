@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def flatten(arr):\n    for x in arr:\n        if isinstance(x, list):\n            for y in flatten(x):\n                yield y\n        else:\n            yield x",
+  "original_response": "```python\ndef flatten(arr):\n    for x in arr:\n        if isinstance(x, list):\n            for y in flatten(x):\n                yield y\n        else:\n            yield x\n\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "flatten"
+}

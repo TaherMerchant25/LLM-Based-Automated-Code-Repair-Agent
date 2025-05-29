@@ -1,0 +1,78 @@
+================================================================================
+QUIXBUGS CODE CORRECTION RESULTS
+================================================================================
+
+PROCESSING MODE: sequential_fast
+FAST MODE: Enabled
+ACCURACY MODE: high
+MODEL: gemini-1.5-flash
+
+OVERALL STATISTICS:
+Total Programs: 41
+Successfully Fixed: 40
+Success Rate: 97.56%
+
+SIMILARITY ANALYSIS:
+Average Similarity to Correct Code: 66.11%
+Exact Matches: 1
+High Similarity (>80%): 16
+Medium Similarity (50-80%): 13
+Low Similarity (<50%): 11
+
+DETAILED RESULTS:
+--------------------------------------------------------------------------------
+[HIGH] bitcount                  | Similarity: 87.89%
+[LOW] breadth_first_search      | Similarity: 30.05%
+[MED] bucketsort                | Similarity: 58.08%
+[HIGH] depth_first_search        | Similarity: 98.05%
+[LOW] detect_cycle              | Similarity: 19.01%
+[LOW] find_first_in_sorted      | Similarity: 40.30%
+[HIGH] find_in_sorted            | Similarity: 85.10%
+[HIGH] flatten                   | Similarity: 86.69%
+[FAILED] gcd                       | Failed to fix code: Rate limit exceeded after 3 attempts: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+[MED] get_factors               | Similarity: 66.92%
+[MED] hanoi                     | Similarity: 67.09%
+[LOW] is_valid_parenthesization | Similarity: 19.05%
+[HIGH] kheapsort                 | Similarity: 91.88%
+[HIGH] knapsack                  | Similarity: 91.05%
+[HIGH] kth                       | Similarity: 95.51%
+[HIGH] lcs_length                | Similarity: 87.83%
+[MED] levenshtein               | Similarity: 66.58%
+[MED] lis                       | Similarity: 59.54%
+[HIGH] longest_common_subsequence | Similarity: 97.46%
+[LOW] max_sublist_sum           | Similarity: 24.63%
+[LOW] mergesort                 | Similarity: 36.43%
+[HIGH] minimum_spanning_tree     | Similarity: 81.97%
+[MED] next_palindrome           | Similarity: 74.72%
+[LOW] next_permutation          | Similarity: 38.19%
+[MED] node                      | Similarity: 68.66%
+[MED] pascal                    | Similarity: 66.56%
+[LOW] possible_change           | Similarity: 26.51%
+[LOW] powerset                  | Similarity: 38.20%
+[MED] quicksort                 | Similarity: 62.57%
+[LOW] reverse_linked_list       | Similarity: 40.87%
+[MED] rpn_eval                  | Similarity: 55.21%
+[MED] shortest_paths            | Similarity: 79.27%
+[HIGH] shortest_path_length      | Similarity: 86.12%
+[HIGH] shortest_path_lengths     | Similarity: 98.18%
+[HIGH] shunting_yard             | Similarity: 90.96%
+[LOW] sieve                     | Similarity: 30.08%
+[MED] sqrt                      | Similarity: 59.29%
+[EXACT] subsequences              | Similarity: 100.00%
+[HIGH] topological_ordering      | Similarity: 98.36%
+[MED] to_base                   | Similarity: 58.99%
+[HIGH] wrap                      | Similarity: 80.43%
+
+PERFORMANCE METRICS:
+Total Processing Time: 317.7 seconds
+Average Time per Program: 7.7 seconds
+Programs per Minute: 7.7

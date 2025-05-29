@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "class Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def get_successor(self):\n        return self.successor\n\n    def get_successors(self):\n        return self.successors\n\n    def get_predecessors(self):\n        return self.predecessors",
+  "original_response": "```python\nclass Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def get_successor(self):\n        return self.successor\n\n    def get_successors(self):\n        return self.successors\n\n    def get_predecessors(self):\n        return self.predecessors\n\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "node"
+}

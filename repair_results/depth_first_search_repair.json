@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def depth_first_search(startnode, goalnode):\n    nodesvisited = set()\n \n    def search_from(node):\n        if node is goalnode:\n            return True\n        else:\n            result = any(\n                search_from(nextnode) for nextnode in node.successors\n            )\n            nodesvisited.add(node)\n            return result\n\n    return search_from(startnode)",
+  "original_response": "```python\ndef depth_first_search(startnode, goalnode):\n    nodesvisited = set()\n \n    def search_from(node):\n        if node is goalnode:\n            return True\n        else:\n            result = any(\n                search_from(nextnode) for nextnode in node.successors\n            )\n            nodesvisited.add(node)\n            return result\n\n    return search_from(startnode)\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "depth_first_search"
+}

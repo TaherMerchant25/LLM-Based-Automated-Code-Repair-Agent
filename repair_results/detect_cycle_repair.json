@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def detect_cycle(node):\n    hare = tortoise = node\n \n    while True:\n        if hare.successor is None or hare.successor.successor is None:\n            return False\n\n        tortoise = tortoise.successor\n        hare = hare.successor.successor\n\n        if hare is tortoise:\n            return True",
+  "original_response": "```python\ndef detect_cycle(node):\n    hare = tortoise = node\n \n    while True:\n        if hare.successor is None or hare.successor.successor is None:\n            return False\n\n        tortoise = tortoise.successor\n        hare = hare.successor.successor\n\n        if hare is tortoise:\n            return True\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "detect_cycle"
+}

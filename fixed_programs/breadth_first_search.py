@@ -7,27 +7,13 @@ def breadth_first_search(startnode, goalnode):
     nodesseen = set()
     nodesseen.add(startnode)
 
-    while queue: # Bug was here.  The while loop should continue as long as the queue is not empty.
+    while queue: #Corrected line
         node = queue.popleft()
 
         if node is goalnode:
             return True
         else:
-            queue.extend(node for node in node.successors if node not in nodesseen)
-            nodesseen.update(node.successors)
+            queue.extend(neighbor for neighbor in node.successors if neighbor not in nodesseen)
+            nodesseen.update(neighbor for neighbor in node.successors if neighbor not in nodesseen)
 
     return False
-
-
-
-"""
-Breadth-First Search
-
-
-Input:
-    startnode: A digraph node
-    goalnode: A digraph node
-
-Output:
-    Whether goalnode is reachable from startnode
-"""

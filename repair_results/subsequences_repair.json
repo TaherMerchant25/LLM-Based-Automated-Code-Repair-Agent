@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def subsequences(a, b, k):\n    if k == 0:\n        return []\n\n    ret = []\n    for i in range(a, b - k + 2):\n        ret.extend(\n            [i] + rest for rest in subsequences(i + 1, b, k - 1)\n        )\n\n    return ret",
+  "original_response": "```python\ndef subsequences(a, b, k):\n    if k == 0:\n        return []\n\n    ret = []\n    for i in range(a, b - k + 2):\n        ret.extend(\n            [i] + rest for rest in subsequences(i + 1, b, k - 1)\n        )\n\n    return ret\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "subsequences"
+}

@@ -1,0 +1,284 @@
+CODE VALIDATION SUMMARY REPORT
+============================================================
+Generated: 2025-05-29 22:59:40
+============================================================
+
+OVERALL STATISTICS:
+------------------------------
+Total Files Processed: 41
+Successful Validations: 35
+Failed Validations: 6
+Passed Final Validation: 23
+Success Rate: 85.4%
+Pass Rate: 56.1%
+
+DETAILED RESULTS:
+------------------------------
+Algorithm: bitcount
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.5443
+
+Algorithm: breadth_first_search
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.4828
+
+Algorithm: bucketsort
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0047
+
+Algorithm: depth_first_search
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.6033
+
+Algorithm: detect_cycle
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.6961
+
+Algorithm: find_first_in_sorted
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.5470
+
+Algorithm: find_in_sorted
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0034
+
+Algorithm: flatten
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 1.0000
+
+Algorithm: gcd
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0114
+
+Algorithm: get_factors
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.2000
+
+Algorithm: hanoi
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.9251
+
+Algorithm: is_valid_parenthesization
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.3583
+
+Algorithm: kheapsort
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0054
+
+Algorithm: knapsack
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.9743
+
+Algorithm: kth
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.7589
+
+Algorithm: lcs_length
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.7757
+
+Algorithm: levenshtein
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.5357
+
+Algorithm: lis
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+Algorithm: longest_common_subsequence
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+Algorithm: max_sublist_sum
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 16
+}
+]
+
+Algorithm: mergesort
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.5064
+
+Algorithm: minimum_spanning_tree
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 1.0000
+
+Algorithm: next_palindrome
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.3241
+
+Algorithm: next_permutation
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.6146
+
+Algorithm: node
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.6420
+
+Algorithm: pascal
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.5552
+
+Algorithm: possible_change
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.3548
+
+Algorithm: powerset
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.5723
+
+Algorithm: quicksort
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.2463
+
+Algorithm: reverse_linked_list
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.5834
+
+Algorithm: rpn_eval
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.5994
+
+Algorithm: shortest_paths
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.4961
+
+Algorithm: shortest_path_lengths
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.7222
+
+Algorithm: shortest_path_length
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.9527
+
+Algorithm: shunting_yard
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.6667
+
+Algorithm: sieve
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0056
+
+Algorithm: sqrt
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+Algorithm: subsequences
+  Status: PASSED
+  Syntax Valid: YES
+  Similarity Score: 0.0041
+
+Algorithm: topological_ordering
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+Algorithm: to_base
+  Status: FAILED
+  Syntax Valid: YES
+  Similarity Score: 0.0000
+  Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+
+Algorithm: wrap
+  Status: NEEDS_REVIEW
+  Syntax Valid: YES
+  Similarity Score: 0.5179
+
+============================================================
+Fixed programs saved to: fixed_programs/
+Validation results saved to: validation_results/

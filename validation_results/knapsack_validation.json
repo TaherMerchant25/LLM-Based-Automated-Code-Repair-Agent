@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "def knapsack(capacity, items):\n    from collections import defaultdict\n    memo = defaultdict(int)\n\n    for i in range(1, len(items) + 1):\n        weight, value = items[i - 1]\n\n        for j in range(1, capacity + 1):\n            memo[i, j] = memo[i - 1, j]\n\n            if weight < j:\n                memo[i, j] = max(\n                    memo[i, j],\n                    value + memo[i - 1, j - weight]\n                )\n\n    return memo[len(items), capacity]",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\ndef knapsack(capacity, items):\n    from collections import defaultdict\n    memo = defaultdict(int)\n\n    for i in range(1, len(items) + 1):\n        weight, value = items[i - 1]\n\n        for j in range(1, capacity + 1):\n            memo[i, j] = memo[i - 1, j]\n\n            if weight < j:\n                memo[i, j] = max(\n                    memo[i, j],\n                    value + memo[i - 1, j - weight]\n                )\n\n    return memo[len(items), capacity]\n```",
+  "algorithm": "knapsack",
+  "similarity_metrics": {
+    "character_similarity": 0.9984779299847792,
+    "line_similarity": 0.9230769230769231,
+    "token_similarity": 0.9956331877729258,
+    "structure_similarity": 0.9948453608247423,
+    "overall_similarity": 0.9742776914168589
+  }
+}

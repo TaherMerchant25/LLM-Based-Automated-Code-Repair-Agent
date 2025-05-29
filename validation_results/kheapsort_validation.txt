@@ -1,0 +1,29 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: kheapsort
+Timestamp: 2025-05-29 22:58:07
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.0000
+Line Similarity: 0.0000
+Token Similarity: 0.0000
+Structure Similarity: 0.0270
+Overall Similarity: 0.0054
+
+FINAL CODE:
+------------------------------
+
+
+==================================================

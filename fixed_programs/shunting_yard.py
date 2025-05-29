@@ -14,8 +14,8 @@ def shunting_yard(tokens):
         else:
             while opstack and precedence[token] <= precedence[opstack[-1]]:
                 rpntokens.append(opstack.pop())
-            opstack.append(token) # The bug was here.  The operator needs to be added to the stack.
-
+            opstack.append(token)
+ 
     while opstack:
         rpntokens.append(opstack.pop())
 
@@ -42,7 +42,7 @@ Examples:
     >>> shunting_yard([10, '-', 5, '-', 2])
     [10, 5, '-', 2, '-']
     >>> shunting_yard([34, '-', 12, '/', 5])
-    [34, 12, 5, '/' ,'-']
+    [34, 12, 5, '/', '-']
     >>> shunting_yard([4, '+', 9, '*', 9, '-', 10, '+', 13])
     [4, 9, 9, '*', '+', 10, '-', 13, '+']
 """

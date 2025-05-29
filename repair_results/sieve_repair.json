@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def sieve(max):\n    primes = []\n    is_prime = [True] * (max + 1)\n    for p in range(2, int(max**0.5) + 1):\n        if is_prime[p]:\n            for i in range(p * p, max + 1, p):\n                is_prime[i] = False\n    for p in range(2, max + 1):\n        if is_prime[p]:\n            primes.append(p)\n    return primes",
+  "original_response": "```python\ndef sieve(max):\n    primes = []\n    is_prime = [True] * (max + 1)\n    for p in range(2, int(max**0.5) + 1):\n        if is_prime[p]:\n            for i in range(p * p, max + 1, p):\n                is_prime[i] = False\n    for p in range(2, max + 1):\n        if is_prime[p]:\n            primes.append(p)\n    return primes\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "sieve"
+}

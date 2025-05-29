@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "def next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] > perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n\n\n \n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] > perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n\n\n \n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"\n```",
+  "algorithm": "next_permutation",
+  "similarity_metrics": {
+    "character_similarity": 0.5291479820627802,
+    "line_similarity": 0.47619047619047616,
+    "token_similarity": 0.5637254901960784,
+    "structure_similarity": 0.9838709677419355,
+    "overall_similarity": 0.6145785798769096
+  }
+}

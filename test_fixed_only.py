@@ -4,6 +4,7 @@ import sys
 import importlib
 import threading
 import time
+import os
 from queue import Queue, Empty
 
 class TimeoutError(Exception):
@@ -50,14 +51,18 @@ def test_fixed_program(program_name, test_timeout=5):
     print("="*50)
     
     try:
+        # Check if test cases file exists first
+        testcase_file = f"json_testcases/{program_name}.json"
+        if not os.path.exists(testcase_file):
+            print(f"SKIP: No test cases file found for {program_name} at {testcase_file}")
+            return None  # Return None to indicate skipped, not failed
+        
         # Import the fixed program
         module_name = f"fixed_programs.{program_name}"
         module = importlib.import_module(module_name)
         func = getattr(module, program_name)
         
         # Load test cases
-        testcase_file = f"json_testcases/{program_name}.json"
-        
         with open(testcase_file, 'r') as f:
             passed = 0
             total = 0
@@ -104,9 +109,6 @@ def test_fixed_program(program_name, test_timeout=5):
             print(f"\nOverall Result: {'SUCCESS' if success else 'FAILED'}")
             return success
             
-    except FileNotFoundError as e:
-        print(f"Error: Could not find test cases file: {testcase_file}")
-        return False
     except ImportError as e:
         print(f"Error: Could not import fixed program: {e}")
         print(f"Make sure {program_name}.py exists in the fixed_programs/ folder")
@@ -117,7 +119,6 @@ def test_fixed_program(program_name, test_timeout=5):
 
 def test_all_fixed_programs(test_timeout=5):
     """Test all programs in the fixed_programs folder"""
-    import os
     
     fixed_dir = "fixed_programs"
     if not os.path.exists(fixed_dir):
@@ -137,28 +138,52 @@ def test_all_fixed_programs(test_timeout=5):
     print("="*60)
     
     results = {}
+    skipped_programs = []
+    
     for program in program_files:
         print(f"\nTesting: {program}")
-        results[program] = test_fixed_program(program, test_timeout)
+        result = test_fixed_program(program, test_timeout)
+        
+        if result is None:
+            # Program was skipped due to missing JSON file
+            skipped_programs.append(program)
+        else:
+            # Program was tested (either passed or failed)
+            results[program] = result
+        
         print("\n" + "-"*60)
     
-    # Summary
+    # Summary - only count programs that were actually tested
     successful = sum(results.values())
-    total = len(results)
+    total_tested = len(results)
+    total_found = len(program_files)
     
     print(f"\nFINAL SUMMARY:")
-    print(f"Successfully fixed programs: {successful}/{total} ({successful/total*100:.1f}%)")
+    print(f"Programs found: {total_found}")
+    print(f"Programs tested: {total_tested}")
+    print(f"Programs skipped (no test cases): {len(skipped_programs)}")
     
-    print(f"\nSuccessful fixes:")
-    for program, success in results.items():
-        if success:
-            print(f"  - {program}")
+    if total_tested > 0:
+        print(f"Successfully fixed programs: {successful}/{total_tested} ({successful/total_tested*100:.1f}%)")
+    else:
+        print("No programs were tested (all were skipped due to missing test cases)")
     
-    if successful < total:
-        print(f"\nFailed fixes:")
+    if results:
+        print(f"\nTested programs - Successful fixes:")
         for program, success in results.items():
-            if not success:
+            if success:
                 print(f"  - {program}")
+        
+        if successful < total_tested:
+            print(f"\nTested programs - Failed fixes:")
+            for program, success in results.items():
+                if not success:
+                    print(f"  - {program}")
+    
+    if skipped_programs:
+        print(f"\nSkipped programs (no JSON test cases):")
+        for program in skipped_programs:
+            print(f"  - {program}")
 
 def main():
     """Main function with argument parsing"""
@@ -173,7 +198,9 @@ def main():
     
     if args.program:
         # Test specific program
-        test_fixed_program(args.program, args.timeout)
+        result = test_fixed_program(args.program, args.timeout)
+        if result is None:
+            print(f"\nProgram {args.program} was skipped due to missing test cases file.")
     else:
         # Test all fixed programs
         test_all_fixed_programs(args.timeout)
@@ -186,7 +213,9 @@ if __name__ == "__main__":
     elif len(sys.argv) == 2 and not sys.argv[1].startswith('-'):
         # Test specific program with default timeout
         program_name = sys.argv[1]
-        test_fixed_program(program_name)
+        result = test_fixed_program(program_name)
+        if result is None:
+            print(f"\nProgram {program_name} was skipped due to missing test cases file.")
     else:
         # Use argparse for more complex arguments
         main()

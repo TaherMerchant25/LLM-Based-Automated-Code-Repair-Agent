@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "fixed_code": "def hanoi(height, start=1, end=3):\n    steps = []\n    if height > 0:\n        helper = ({1, 2, 3} - {start} - {end}).pop()\n        steps.extend(hanoi(height - 1, start, helper))\n        steps.append((start, helper))\n        steps.extend(hanoi(height - 1, helper, end))\n    else:\n        return steps\n\n    return steps",
+  "original_response": "```python\ndef hanoi(height, start=1, end=3):\n    steps = []\n    if height > 0:\n        helper = ({1, 2, 3} - {start} - {end}).pop()\n        steps.extend(hanoi(height - 1, start, helper))\n        steps.append((start, helper))\n        steps.extend(hanoi(height - 1, helper, end))\n    else:\n        return steps\n\n    return steps\n```\n",
+  "agent": "Code Repair Agent",
+  "algorithm": "hanoi"
+}

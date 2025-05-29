@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "analysis": "1. ALGORITHM PURPOSE: Find the lexicographically next permutation of a given list of unique integers.\n\n2. BUG LOCATION: Lines 7-8: `for j in range(len(perm) - 1, i, -1): if perm[j] < perm[i]:`\n\n3. BUG TYPE: Wrong comparison operator.\n\n4. PROBLEM DESCRIPTION: The inner loop condition `perm[j] < perm[i]` is incorrect.  It should be `perm[j] > perm[i]`. The algorithm aims to find the smallest element *greater* than `perm[i]` in the suffix of the permutation to swap with `perm[i]`.  Using `<` will find the largest element *smaller* than `perm[i]`, leading to an incorrect next permutation in many cases.  For example, if `perm` is `[3, 2, 4, 1]`, the inner loop will never find a suitable `j` because no element is smaller than 2 in the suffix `[4, 1]`.\n\n5. EXPECTED BEHAVIOR: The inner loop should iterate through the suffix of the permutation (`perm[i+1:]`) and find the smallest element that is *greater* than `perm[i]`. This element should then be swapped with `perm[i]`, and the suffix should be reversed.\n\n6. CONFIDENCE: High",
+  "agent": "Bug Analysis Agent",
+  "algorithm": "next_permutation"
+}

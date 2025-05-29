@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "def find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr)\n\n    while lo < hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n \n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\ndef find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr)\n\n    while lo < hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n \n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n```",
+  "algorithm": "find_first_in_sorted",
+  "similarity_metrics": {
+    "character_similarity": 0.4170444242973708,
+    "line_similarity": 0.45161290322580644,
+    "token_similarity": 0.42685851318944845,
+    "structure_similarity": 1.0,
+    "overall_similarity": 0.5469503097840507
+  }
+}

@@ -1,0 +1,96 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: breadth_first_search
+Timestamp: 2025-05-29 22:57:46
+==================================================
+
+VALIDATION STATUS: PASSED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: PASSED
+ISSUES: None
+CORRECTED_CODE: 
+```python
+from collections import deque as Queue
+ 
+def breadth_first_search(startnode, goalnode):
+    queue = Queue()
+    queue.append(startnode)
+
+    nodesseen = set()
+    nodesseen.add(startnode)
+
+    while queue:
+        node = queue.popleft()
+
+        if node is goalnode:
+            return True
+        else:
+            queue.extend(successor for successor in node.successors if successor not in nodesseen)
+            nodesseen.update(node.successors)
+
+    return False
+
+
+
+"""
+Breadth-First Search
+
+
+Input:
+    startnode: A digraph node
+    goalnode: A digraph node
+
+Output:
+    Whether goalnode is reachable from startnode
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.3620
+Line Similarity: 0.3750
+Token Similarity: 0.3435
+Structure Similarity: 0.9741
+Overall Similarity: 0.4828
+
+FINAL CODE:
+------------------------------
+from collections import deque as Queue
+ 
+def breadth_first_search(startnode, goalnode):
+    queue = Queue()
+    queue.append(startnode)
+
+    nodesseen = set()
+    nodesseen.add(startnode)
+
+    while queue:
+        node = queue.popleft()
+
+        if node is goalnode:
+            return True
+        else:
+            queue.extend(successor for successor in node.successors if successor not in nodesseen)
+            nodesseen.update(node.successors)
+
+    return False
+
+
+
+"""
+Breadth-First Search
+
+
+Input:
+    startnode: A digraph node
+    goalnode: A digraph node
+
+Output:
+    Whether goalnode is reachable from startnode
+"""
+
+==================================================

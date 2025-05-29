@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": true,
+  "syntax_valid": true,
+  "final_code": "from collections import deque as Queue\n \ndef breadth_first_search(startnode, goalnode):\n    queue = Queue()\n    queue.append(startnode)\n\n    nodesseen = set()\n    nodesseen.add(startnode)\n\n    while queue:\n        node = queue.popleft()\n\n        if node is goalnode:\n            return True\n        else:\n            queue.extend(successor for successor in node.successors if successor not in nodesseen)\n            nodesseen.update(node.successors)\n\n    return False\n\n\n\n\"\"\"\nBreadth-First Search\n\n\nInput:\n    startnode: A digraph node\n    goalnode: A digraph node\n\nOutput:\n    Whether goalnode is reachable from startnode\n\"\"\"",
+  "validation_response": "VALIDATION: PASSED\nISSUES: None\nCORRECTED_CODE: \n```python\nfrom collections import deque as Queue\n \ndef breadth_first_search(startnode, goalnode):\n    queue = Queue()\n    queue.append(startnode)\n\n    nodesseen = set()\n    nodesseen.add(startnode)\n\n    while queue:\n        node = queue.popleft()\n\n        if node is goalnode:\n            return True\n        else:\n            queue.extend(successor for successor in node.successors if successor not in nodesseen)\n            nodesseen.update(node.successors)\n\n    return False\n\n\n\n\"\"\"\nBreadth-First Search\n\n\nInput:\n    startnode: A digraph node\n    goalnode: A digraph node\n\nOutput:\n    Whether goalnode is reachable from startnode\n\"\"\"\n```",
+  "algorithm": "breadth_first_search",
+  "similarity_metrics": {
+    "character_similarity": 0.362,
+    "line_similarity": 0.375,
+    "token_similarity": 0.34347826086956523,
+    "structure_similarity": 0.9741379310344828,
+    "overall_similarity": 0.48277106446776613
+  }
+}

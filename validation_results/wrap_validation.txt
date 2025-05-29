@@ -1,0 +1,93 @@
+CODE VALIDATION REPORT
+==================================================
+Algorithm: wrap
+Timestamp: 2025-05-29 22:59:40
+==================================================
+
+VALIDATION STATUS: FAILED
+SYNTAX VALID: YES
+PROCESSING SUCCESS: YES
+
+VALIDATION RESPONSE:
+------------------------------
+VALIDATION: FAILED
+ISSUES: The fixed code still has a subtle flaw. While the loop condition is now correct (`len(text) > 0`), it doesn't handle the case where the entire text is shorter than `cols`.  In this scenario, the code will still produce an empty list, whereas it should return a list containing the entire text as a single element.
+
+CORRECTED_CODE:
+```python
+def wrap(text, cols):
+    lines = []
+    if len(text) <= cols:
+        return [text]  # Handle cases where text is shorter than cols
+
+    while len(text) > 0:
+        end = text.rfind(' ', 0, cols + 1)
+        if end == -1:
+            end = cols
+        line, text = text[:end], text[end:]
+        lines.append(line)
+
+    return lines
+
+""" 
+Wrap Text
+
+Given a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.
+
+Input:
+    text: The starting text.
+    cols: The target column width, i.e. the maximum length of any single line after wrapping.
+
+Precondition:
+    cols > 0.
+
+Output:
+    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,
+and such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces
+at the start or end of each line aren't trimmed.),Wrapping Text
+"""
+```
+
+SIMILARITY METRICS (vs Correct Code):
+------------------------------
+Character Similarity: 0.3333
+Line Similarity: 0.4706
+Token Similarity: 0.4408
+Structure Similarity: 0.8889
+Overall Similarity: 0.5179
+
+FINAL CODE:
+------------------------------
+def wrap(text, cols):
+    lines = []
+    if len(text) <= cols:
+        return [text]  # Handle cases where text is shorter than cols
+
+    while len(text) > 0:
+        end = text.rfind(' ', 0, cols + 1)
+        if end == -1:
+            end = cols
+        line, text = text[:end], text[end:]
+        lines.append(line)
+
+    return lines
+
+""" 
+Wrap Text
+
+Given a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.
+
+Input:
+    text: The starting text.
+    cols: The target column width, i.e. the maximum length of any single line after wrapping.
+
+Precondition:
+    cols > 0.
+
+Output:
+    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,
+and such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces
+at the start or end of each line aren't trimmed.),Wrapping Text
+"""
+
+==================================================

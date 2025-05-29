@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "validation_passed": false,
+  "syntax_valid": true,
+  "final_code": "def wrap(text, cols):\n    lines = []\n    if len(text) <= cols:\n        return [text]  # Handle cases where text is shorter than cols\n\n    while len(text) > 0:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\" \nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.),Wrapping Text\n\"\"\"",
+  "validation_response": "VALIDATION: FAILED\nISSUES: The fixed code still has a subtle flaw. While the loop condition is now correct (`len(text) > 0`), it doesn't handle the case where the entire text is shorter than `cols`.  In this scenario, the code will still produce an empty list, whereas it should return a list containing the entire text as a single element.\n\nCORRECTED_CODE:\n```python\ndef wrap(text, cols):\n    lines = []\n    if len(text) <= cols:\n        return [text]  # Handle cases where text is shorter than cols\n\n    while len(text) > 0:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\" \nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.),Wrapping Text\n\"\"\"\n```",
+  "algorithm": "wrap",
+  "similarity_metrics": {
+    "character_similarity": 0.3333333333333333,
+    "line_similarity": 0.47058823529411764,
+    "token_similarity": 0.4407894736842105,
+    "structure_similarity": 0.8888888888888888,
+    "overall_similarity": 0.5178577571379429
+  }
+}

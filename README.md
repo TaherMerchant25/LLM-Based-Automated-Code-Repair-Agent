@@ -1,8 +1,8 @@
-# 🔧 QuixBugs AutoFix: Large-Scale Bug Repair with Gemini AI
+# 🔧 QuixBugs AutoFix: Multi-Agent Code Correction System
 
 ## 🧠 Project Overview
 
-**QuixBugs AutoFix** is a high-throughput, AI-powered pipeline designed to automatically fix buggy implementations in the [QuixBugs dataset](https://github.com/jkoppel/QuixBugs). It leverages the Gemini 1.5 model to repair Python functions that contain exactly one bug, using an intelligent prompt system and rigorous test-driven validation.
+**QuixBugs AutoFix** is a robust, multi-agent code correction framework designed to automatically detect, repair, and validate buggy Python functions from the QuixBugs dataset. It supports both a modular pipeline approach using dedicated agents and a fast, single-agent alternative for rapid batch correction. The system uses the Gemini 1.5 family of models for analysis, repair, and validation.
 
 ---
 
@@ -31,11 +31,26 @@ v
 +----------+----------+
 |
 v
++------------------------+
+|  Bug Analysis Agent    |
++-----------+------------+
+|
+v
++-----------+------------+
+|   Code Repair Agent    |
++-----------+------------+
+|
+v
 +---------------------+
 | Generated Fix |
 | - Multi-attempts |
 | - Syntax checks |
 +----------+----------+
+|
+v
++------------------------+
+| Code Validation Agent  |
++------------------------+
 |
 v
 +--------------------------+
@@ -69,6 +84,7 @@ Fix the single bug in this Python function.
 Algorithm: {algorithm_name}
 Code:
 ```
+```
 python
 {buggy_code}
 This code contains exactly one bug. Common QuixBugs patterns:
@@ -84,6 +100,7 @@ Wrong loop bounds or conditions
 Missing/incorrect increments
 
 Find the bug and return only the corrected Python code.
+```
 
 
 ### Attempt 2 (Detailed ReAct)
@@ -92,6 +109,7 @@ Debug this Python function step by step.
 
 Algorithm: {algorithm_name}
 Code:
+```
 ```
 python
 {buggy_code}
@@ -107,6 +125,7 @@ What is the minimal fix needed?
 
 ACTION:
 Return only the corrected Python code with the single bug fixed.
+```
 
 
 ---
@@ -147,7 +166,7 @@ Validation happens in **three stages**:
 
 ---
 
-## 🧪 Run It Yourself
+## 🧪 Run It Yourself (Approach-1)
 
 ### 1. Prerequisites
 ```bash
@@ -156,23 +175,64 @@ export GOOGLE_API_KEY="your_gemini_api_key"
 ```
 ### 2. Run Fixer
 ```bash
-python code_corrector.py
+python main_pipeline.py
 ```
 ### 3. Run Tests
 ```bash
 python test_fixed_only.py          # all programs
 python test_fixed_only.py gcd      # specific program
 ```
+---
+---
+
+## 🧪 Run It Yourself (Approach - 2)
+
+### 1. Install Dependencies
+
+```bash
+pip install google-generativeai langchain-google-genai
+```
+
+### 2. Set API Keys
+
+```bash
+export GEMINI_API_KEY_1=your_analysis_key
+export GEMINI_API_KEY_2=your_repair_key
+export GEMINI_API_KEY_3=your_validation_key
+```
+
+### 3. Run the Pipeline
+
+```bash
+python main_pipeline.py
+```
+
+### 4. Run Fast Corrector (Optional)
+
+```bash
+python code_corrector.py
+```
+
+### 5. Run Tests
+
+```bash
+python test_fixed_only.py          # all programs
+python test_fixed_only.py gcd      # specific program
+```
+---
+
 ### 📁 Folder Structure
 ```yaml
 .
 ├── python_programs/              # Buggy QuixBugs programs
 ├── fixed_programs/               # AI-generated fixes
-├── correct_python_programs/     # Ground-truth correct solutions
-├── json_testcases/              # I/O tests for each program
-├── code_corrector.py            # Main LLM repair pipeline
-├── test_fixed_only.py           # Standalone test validator
-├── tester.py                    # Timeout-enabled executor
+├── correct_python_programs/     # Ground-truth solutions
+├── json_testcases/              # I/O test cases
+├── analysis_results/            # Bug analysis reports
+├── repair_results/              # Repair logs
+├── validation_results/          # Validation reports
+├── code_corrector.py            # Fast single-agent fixer
+├── main_pipeline.py             # Orchestration script
 └── quixbugs_report_<timestamp>.txt  # Evaluation report
 ```
 ### 📬 Contact

@@ -245,7 +245,7 @@ class BugAnalysisWorker:
 
 def main():
     # REPLACE WITH YOUR API KEY
-    API_KEY_1 = "AIzaSyB8U-1zJJHQ_UU_6nDH-ktR7r1zxsaUEyo"  # Replace with your first API key
+    API_KEY_1 = ""  # Replace with your first API key
     
     if API_KEY_1 == "YOUR_GEMINI_API_KEY_1":
         print("Please set your Gemini API key in the script")
